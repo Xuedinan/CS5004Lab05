@@ -1,4 +1,7 @@
 package toDoList;
+import java.util.ArrayList;
+import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 /*
@@ -83,6 +86,16 @@ public class LinkedList<T> {
 		return new LinkedList(data.getStatusNodes(tester));
 	}
 	
+	// convert node to a new LinkedList with string
+//	  public <T> LinkedList<Object> map(Function<Task,Object> converter) {
+//		    return new LinkedList<Object>(data.convertNodes(converter).toString());
+//		  }
+	
+	  public LinkedList<String> map(Function<Task,Object> converter) {
+		    return new LinkedList(data.convertNodes((Function<T, Object>) converter));
+		  }
+	
+	
 	// count node by condition filter recursively 
 	public int countNodes(Predicate<T> tester) {
 		return data.countNodes(tester);
@@ -91,4 +104,7 @@ public class LinkedList<T> {
 	public void printStatusNode(Predicate<T> tester) {
 	  System.out.println(data.printStatusNode(tester));
 	}
+
+	
+	
 }

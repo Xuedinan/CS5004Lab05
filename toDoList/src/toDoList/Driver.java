@@ -29,7 +29,7 @@ My program has structure as below;
 	Task Class
 		- store information for each task
 	
-	FilterTool Class
+	ToDoListTools Class
 		- provide checking tools when filter out task
 
 Demonstration process;
@@ -73,7 +73,7 @@ public class Driver {
 		String contentCheck = "Coding"; 
 		
 		// create filter tool
-		FilterTool filter = new FilterTool();
+		ToDoListTools filter = new ToDoListTools();
 		
 		System.out.println(" --- Program testing started ---");
 		System.out.println("We have nothing to do right now" + ll.toString());
@@ -84,6 +84,11 @@ public class Driver {
 		ll.addNode(task3);
 		ll.addNode(task4);
 		
+		System.out.println("\n--- ============= ---");
+		LinkedList<String> test11 = ll.map(s->s.getContent());
+		System.out.println(test11.toString());
+		
+
 		System.out.println("Now we have tasks: \n" + ll.toString());
 		System.out.println("Total " + ll.count() + " tasks to do. ");
 		System.out.println(" \n--- Don't want to eat, remove Eating ---");

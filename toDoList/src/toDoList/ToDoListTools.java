@@ -1,44 +1,58 @@
 package toDoList;
-import java.util.function.Predicate;
 
+import java.util.function.Function;
+import java.util.function.Predicate;
 /*
  * Course: CS5004
  * Semester: Spring 2024
- * Assignment: Lab04
+ * Assignment: Lab05
  * Name: Xuedinan Gao
  */
 
 // This is tool class, using for filtering out task with status, priority, date, content
 // all methods return boolean by using predicate interface
 
-public class FilterTool {
+
+public class ToDoListTools implements FilterMapTools<Task, Object>{
 	
-	// constructor to create filter tool
-	public FilterTool() {};
+	public ToDoListTools() {};
 	
 	// checking for expiration date
+	@Override
     public Predicate<Task> expireCheck(ExpiredDate date) {
         return task -> date.isBefore(task.getDate());
     }
-	
-    // checking for task status
-    public Predicate<Task> statusCheck(TaskStatus status) {
+    
+	// checking for task status
+	@Override
+	public Predicate<Task> statusCheck(TaskStatus status) {
         return task -> task.getStatus() == status;
     }
     
     // checking for priority level
-    public Predicate<Task> priorityCheck(PriorityType priority) {
+	@Override
+	public Predicate<Task> priorityCheck(PriorityType priority) {
         return task -> task.getPriority() == priority;
     }
     
     // checking for same task
-    public Predicate<Task> contentCheck(String content) {
+	@Override
+	public Predicate<Task> contentCheck(String content) {
         return task -> task.getContent().contains(content);
     }
     
     // provide period tasks
-    public Predicate<Task> datePeriodCheck(ExpiredDate start, ExpiredDate end) {
+	@Override
+	public Predicate<Task> datePeriodCheck(ExpiredDate start, ExpiredDate end) {
         return task -> end.isBefore(task.getDate()) && start.isAfter(task.getDate());
     }
-    
+	
+	// convert linked list to string linked list
+    @Override
+    public String stringMap(Function<Task, Object> converter) {   
+    	String content = converter.toString();
+    	return content;
+    }
+	
+
 }

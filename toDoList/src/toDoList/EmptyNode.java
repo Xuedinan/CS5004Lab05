@@ -1,5 +1,6 @@
 package toDoList;
 
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 /*
@@ -61,6 +62,12 @@ public class EmptyNode<T> implements Node<T>{
 	@Override
 	public String printStatusNode(Predicate<T> tester) {
 		return "";
+	}
+
+	@Override
+	public StringBuilder convertNodes(Function<T, Object> converter) {
+		StringBuilder result = new StringBuilder();
+		return result;
 	}
 	
 }

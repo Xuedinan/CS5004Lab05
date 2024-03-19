@@ -1,4 +1,5 @@
 package toDoList;
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 /*
@@ -113,6 +114,17 @@ public class TaskNode<T> implements Node<T> {
 	        result.append(nextTask.printStatusNode(tester));
 	    }
 	    return result.toString();
+	}
+	
+	// Map tool, convert whole Linked List to a Linked List with a linked list with task description only
+	public StringBuilder convertNodes (Function<T, Object> converter){
+		// create StringBuilder to receive result
+	    StringBuilder result = new StringBuilder();
+	    result.append((String) converter.apply(data)).append("\n");
+	    if (nextTask != null) { // check next node
+	        result.append(nextTask.convertNodes(converter)).append("\n"); // recusively loop nextTask
+	    }
+	    return result;
 	}
 	
 }

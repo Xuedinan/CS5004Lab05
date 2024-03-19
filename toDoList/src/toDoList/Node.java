@@ -1,5 +1,6 @@
 package toDoList;
 
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 /*
@@ -30,5 +31,7 @@ public interface Node<T> {
 	public int countNodes(Predicate<T> tester);
 
 	public String printStatusNode(Predicate<T> tester);
+
+	public StringBuilder convertNodes(Function<T, Object> converter);
 
 }
