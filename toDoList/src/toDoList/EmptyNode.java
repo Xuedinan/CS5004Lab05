@@ -28,7 +28,7 @@ public class EmptyNode<T> implements Node<T>{
 
 	@Override
 	public Node getStatusNodes(Predicate<T> tester) {
-		return new EmptyNode();
+		return new EmptyNode<Object>();
 	}
 
 	public String toString() {

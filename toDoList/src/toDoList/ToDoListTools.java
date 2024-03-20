@@ -13,7 +13,7 @@ import java.util.function.Predicate;
 // all methods return boolean by using predicate interface
 
 
-public class ToDoListTools implements FilterMapTools<Task, Object>{
+public class ToDoListTools implements FilterMapTools<Task, Object>, FoldTools<Object>{
 	
 	public ToDoListTools() {};
 	
@@ -35,6 +35,11 @@ public class ToDoListTools implements FilterMapTools<Task, Object>{
         return task -> task.getPriority() == priority;
     }
     
+	/* I'm using contatins() instead of equals() to check same task
+	 * Because while we using ToDo list tool, most of the time, we might have similar tasks instead of exactly the same
+	 * task has the same string content.
+	 */
+	
     // checking for same task
 	@Override
 	public Predicate<Task> contentCheck(String content) {
@@ -53,6 +58,13 @@ public class ToDoListTools implements FilterMapTools<Task, Object>{
     	String content = converter.toString();
     	return content;
     }
+    
+    //fold - get count number by input checking
+    @Override
+	public int FoldCountByStatus(LinkedList ll, Predicate tester) {
+		
+		int result = ll.countNodes(tester);
+		return result;
+	}
 	
-
 }

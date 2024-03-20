@@ -11,12 +11,12 @@ package toDoList;
 
 public class Task {
 
-	private String content;
-	private Date date;
-	private TaskStatus status; // TaskStatus is ENUM 
-	private PriorityType priority; // PriorityType is ENUM
+	protected String content;
+	protected Date date;
+	protected TaskStatus status; // TaskStatus is ENUM 
+	protected PriorityType priority; // PriorityType is ENUM
 	
-	// consturctor
+	// Constructor
 	public Task(String content, Date date, TaskStatus status, PriorityType priority) {
 		this.content = content;
 		this.date = date;
@@ -64,7 +64,7 @@ public class Task {
 		return priority;
 	}
 	
-	// check if prioirty is valid
+	// check if priority is valid
 	public void setPriority(PriorityType priority) {
 		if(!(priority instanceof PriorityType)) {
 			throw new IllegalArgumentException("Invalid input for task priority setting. ");
@@ -81,6 +81,4 @@ public class Task {
 		date.setMonth(month);
 		date.setYear(year);
 	}
-	
-	
 }

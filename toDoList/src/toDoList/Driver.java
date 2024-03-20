@@ -1,5 +1,11 @@
 package toDoList;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+
 /*
  * Course: CS5004
  * Semester: Spring 2024
@@ -30,7 +36,7 @@ My program has structure as below;
 		- store information for each task
 	
 	ToDoListTools Class
-		- provide checking tools when filter out task
+		- provide checking tools when filterMap out task
 
 Demonstration process;
 
@@ -72,8 +78,10 @@ public class Driver {
 		// for similar content task check later
 		String contentCheck = "Coding"; 
 		
-		// create filter tool
-		ToDoListTools filter = new ToDoListTools();
+		// create filterMap tool
+		ToDoListTools filterMap = new ToDoListTools();
+		// create compare tool
+		TaskCompare tc = new TaskCompare();
 		
 		System.out.println(" --- Program testing started ---");
 		System.out.println("We have nothing to do right now" + ll.toString());
@@ -103,29 +111,45 @@ public class Driver {
 		System.out.println("Now we have tasks: \n" + ll.toString());
 		
 		System.out.println("\n--- Get all onging tasks ---");
-		LinkedList<Task> ongoingTask = ll.getNodes(filter.statusCheck(TaskStatus.ONGOING));
+		LinkedList<Task> ongoingTask = ll.getNodes(filterMap.statusCheck(TaskStatus.ONGOING));
 		System.out.println("Now we have on going tasks: \n" + ongoingTask.toString());
 		
 		System.out.println("\n--- Get all high prioirty tasks ---");
-		LinkedList<Task> highTask = ll.getNodes(filter.priorityCheck(PriorityType.HIGH));
+		LinkedList<Task> highTask = ll.getNodes(filterMap.priorityCheck(PriorityType.HIGH));
 		System.out.println("Now we have high prioirty tasks: \n" + highTask.toString());
 		
 		System.out.println("\n--- Get all expired tasks ---");
-		LinkedList<Task> expiredTask = ll.getNodes(filter.expireCheck(exDate));
+		LinkedList<Task> expiredTask = ll.getNodes(filterMap.expireCheck(exDate));
 		System.out.println("Now we have expired tasks, before expired date: " + exDate.toString()+"\n" + expiredTask.toString());
 		
 		System.out.println("\n--- Print out all task between two expired date ---");
 		System.out.println("Start date: " + exDate.toString());
 		System.out.println("End date: " + psDate.toString());
-		LinkedList<Task> periodTask = ll.getNodes(filter.datePeriodCheck(psDate, exDate));
+		LinkedList<Task> periodTask = ll.getNodes(filterMap.datePeriodCheck(psDate, exDate));
 		System.out.println("Now we have below tasks: \n" + periodTask.toString());
 		
 		System.out.println("\n--- Count tasks only has HIGH prioirty ---");
-		int ht = ll.countNodes(filter.priorityCheck(PriorityType.HIGH));
+		int ht = ll.countNodes(filterMap.priorityCheck(PriorityType.HIGH));
 		System.out.println("Now we have " + ht + " HIGH priority tasks \n");
 		
+		
+		
+		System.out.println("\n--- ================== ---");
+		int hh = filterMap.FoldCountByStatus(ll, filterMap.priorityCheck(PriorityType.HIGH));
+		System.out.println("\n--- ================== --- " + hh);
+
+		System.out.println("\n--- ================== ********* " + tc.compareResult(task1, task3));
+		
+		FileLoader fl = new FileLoader();
+		LinkedList<Task> loadedList = fl.readTasksFromFile("toDoList.csv");
+		System.out.println("\n--- ================== $%^$%^$^%$^% " + loadedList.toString());
+		fl.writeFile("toDoList.txt", task4);
+		
+		
+		
+
 		System.out.println("\n--- Get similar tasks ---");
-		LinkedList<Task> simlarTask = ll.getNodes(filter.contentCheck(contentCheck));
+		LinkedList<Task> simlarTask = ll.getNodes(filterMap.contentCheck(contentCheck));
 		System.out.println("Now we have task with simlar content of " + contentCheck + "\n" + simlarTask.toString());
 		
 		System.out.println("--- Remove all tasks ---");

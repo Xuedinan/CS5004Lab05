@@ -18,9 +18,9 @@ public interface Node<T> {
 	
 	public T getTaskNode(int position);
 	
-	public Node getStatusNodes(Predicate<T> tester);
+	public Node<?> getStatusNodes(Predicate<T> tester);
 
-	public Node removedLeftNodes(Predicate<T> tester);
+	public Node<?> removedLeftNodes(Predicate<T> tester);
 
 	public Node<T> getNext();
 
