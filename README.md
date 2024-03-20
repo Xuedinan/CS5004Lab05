@@ -1,5 +1,5 @@
 # CS5004Lab05
-Repository for CS5004 Lab04 assignment submission
+Repository for CS5004 Lab05 assignment submission
 
 Name: Xuedinan(Dinan) Gao\
 Semester: 2024 Spring
