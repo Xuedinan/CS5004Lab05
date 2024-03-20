@@ -50,17 +50,18 @@ Semester: 2024 Spring
 
 :star:  **Weekly report**
 
-By completing Lab Assignment 04, I'm familiar with LinkedList and practice a lot of implementation. In addition, since this is an open design assignment, I also try to add more OOD design principles to my assignment, like using more ENUM, Interface, Abstract Class, extracting generic function to a tool class, making my program more abstract and friendly to extension in the future, etc.
+This week's assignment is challenging. There are many new elements that need to be integrated into my program, like filter, map, and fold. And for each method, it also has an appropriate interface/class to implement, like Predicate, Function, and Comparator. In my opinion, the extension of the previous program actually it's harder than creating a new one. I think I had this feeling that because the design of my program could be better with "Open to extend". I tried to extract the generic framework of the data structure and created multiple interfaces for different tools. However, if I redo the whole program at regaining, I think I will do more abstract design in the Task and Node class, and maybe use factory patterns to design them.
 
-For the Linked List data structure, I think it's really great for the design that needs a dynamic size of data structure and is easy to insert and delete. Like this assignment, by using Linked List, we could quickly access the head of all tasks and help us with quick updating and modification, and it saved more memory by utilizing the non-continuous memory of the computer. However, I think this assignment is also achievable without using Linked List, we could implement an array or tree structure but might have different time and space complexity based on our operation design of this program.
+Thus, this is a great practice experience of OOD, it's like "I created trouble for myself with bad design and I need to fix it eventually". It got me a clear point of what is good design and what is good for "Open for extension, not modification".
 
 In my program, I also apply extension as;
 - Use driver and JUnit testing
 - Additional functions
 	- time period filter 
-	- similar task checking
+	- similar task checking instead of exactly same task checking
 - Use more ENUM with more complex elements
 - Create clear driver for testing
-- More design element, FilterTool, Status ENUM, prepare to extend
+- More design elements, ToDoListTools, Status ENUM, Multiple interfaces
+- Read / Write file with appropriate data format, could generate LinkedList automatically from reading file
 - Code defensively for most of methods
 - Use interface over abstract and inheritance for future extension 
