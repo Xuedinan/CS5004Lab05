@@ -7,44 +7,63 @@ Semester: 2024 Spring
 ### My submission includes following directory/files
 
 - program\
-  <img width="306" alt="image" src="https://github.com/Xuedinan/CS5004Lab04/assets/144306521/dcceee04-1dd9-4b2a-97fe-d7f8dd0f5417">
-
+![image](https://github.com/Xuedinan/CS5004Lab05/assets/144306521/ce375fa4-0d49-4735-8cbc-4e76d01da63d)
 
 - test
-<img width="201" alt="image" src="https://github.com/Xuedinan/CS5004Lab04/assets/144306521/df7e7036-f73a-4995-8820-6a5527b6d1fa">
-
+![image](https://github.com/Xuedinan/CS5004Lab05/assets/144306521/eac86e0f-83fa-451d-af65-9d30d615889f)
 
 ### My program has the structure as below;
 
 - ENUM
 	- TaskStatus, ONGOING, COMPLETED
-	- PriorityType, HIGH, GENERAL, LOW
+	- PriorityType, HIGH, INPROGRESS, LOW
+	
 - Date Class
 	- subclass, ExpiredDate Class
+
 - Node Interface
 	- Implementation class, TaskNode
 	- Implementation class, EmptyNode
+
 - LinkedList Class
 	- main structure for linked list
+
 - Task Class
 	- store information for each task
-- FilterTool Class
-	- provide checking tools when filter out task
+
+- ToDoListTools Class
+	- provide checking tools for filtering, mapping, folding method
+
+	- Implements -> FilterMapTools Interface
+					- provide interface for filter, map method
+					
+	- Implements -> FoldTools Interface
+					- provide interface for count fold method
+- TaskCompare Class
+	- Compare two tasks for priority
+	
+- FileLoader Class
+	- Provide tool to create Linked List by reading tasks from a file
+	- Provide tool to write tasks into a file with format
  
 ### Driver test process
 1. create LinkedList, Task, date, ExpiredDate object with valid, and invalid input
 2. add more task
 3. remove single task
 4. count all task
+5. revise task and date
 5. get task by condition
 6. remove task by condition
 7. print out task by condition
 8. print in period task
 9. change date on task
-10. count all task by condition
-11. print similar content task
-12. remove all task
-13. print all task
+10. count task by MAP and Filter method
+11. get tasks and create Linked List from reading file
+12. compare tasks and get higher priority one
+13. print similar content task
+14. implement MAP to convert linked list to cotent only linked list
+15. remove all task
+16. print all task
 
 ### Writing assignment
 
