@@ -3,6 +3,15 @@ package toDoList;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
+/*
+ * Course: CS5004
+ * Semester: Spring 2024
+ * Assignment: Lab05
+ * Name: Xuedinan Gao
+ */
+
+// This Interface for class to implements related tool function for filtering, mapping
+
 public interface FilterMapTools<T, R> {
 	
 	// Filter tools

@@ -2,6 +2,15 @@ package toDoList;
 
 import java.util.Comparator;
 
+/*
+ * Course: CS5004
+ * Semester: Spring 2024
+ * Assignment: Lab05
+ * Name: Xuedinan Gao
+ */
+
+// This a tool class to help compare priority between tasks
+
 public class TaskCompare implements Comparator<Task>{
 	
 	@Override

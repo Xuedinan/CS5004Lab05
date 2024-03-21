@@ -9,7 +9,10 @@ import java.util.function.Predicate;
  * Name: Xuedinan Gao
  */
 
-// This is tool class, using for filtering out task with status, priority, date, content
+// This is tool class, using for 
+// filtering - task with status, priority, date, content
+// mapping - convert linked list to string linked list
+// folding - count by input requirement
 // all methods return boolean by using predicate interface
 
 

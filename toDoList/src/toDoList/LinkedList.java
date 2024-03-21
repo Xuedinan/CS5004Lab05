@@ -1,14 +1,12 @@
 package toDoList;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.function.Consumer;
+
 import java.util.function.Function;
 import java.util.function.Predicate;
 
 /*
  * Course: CS5004
  * Semester: Spring 2024
- * Assignment: Lab04
+ * Assignment: Lab05
  * Name: Xuedinan Gao
  */
 
