@@ -59,6 +59,7 @@ In my program, I also apply extension as;
 - Additional functions
 	- time period filter 
 	- similar task checking instead of exactly same task checking
+ 	- implements count function by both of fold and filter method
 - Use more ENUM with more complex elements
 - Create clear driver for testing
 - More design elements, ToDoListTools, Status ENUM, Multiple interfaces
