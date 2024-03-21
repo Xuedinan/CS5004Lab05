@@ -9,7 +9,7 @@ Semester: 2024 Spring
 - program\
 ![image](https://github.com/Xuedinan/CS5004Lab05/assets/144306521/ce375fa4-0d49-4735-8cbc-4e76d01da63d)
 
-- test
+- test\
 ![image](https://github.com/Xuedinan/CS5004Lab05/assets/144306521/eac86e0f-83fa-451d-af65-9d30d615889f)
 
 ### My program has the structure as below;
